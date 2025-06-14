@@ -2,5 +2,9 @@
   "extends": [
     "next/core-web-vitals",
     "next/typescript"
-  ]
+  ],
+  "rules": {
+    "@next/next/no-html-link-for-pages": "off",
+    "react/no-inline-styles": "off"
+  }
 }
