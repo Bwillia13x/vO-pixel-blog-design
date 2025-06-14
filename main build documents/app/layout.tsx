@@ -22,15 +22,9 @@ const vt323 = VT323({
 })
 
 export const metadata = {
-  title: {
-    default: "Pixel Wisdom - Tech Blog & Portfolio",
-    template: "%s | Pixel Wisdom"
-  },
-  description: "Personal blog and portfolio showcasing tech projects, AI development, and digital insights with a retro pixel aesthetic.",
-  generator: 'v0.dev',
-  keywords: ['tech', 'AI', 'development', 'portfolio', 'blog', 'pixel art'],
-  authors: [{ name: 'Pixel Wisdom' }],
-  creator: 'Pixel Wisdom',
+  title: "Pixel Wisdom",
+  description: "Tech, Art, and Finance tips with a retro twist",
+    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -57,7 +51,7 @@ export default function RootLayout({
             </div>
           </header>
           <main>{children}</main>
-          <footer className="py-8 text-center font-mono">© 2025 Pixel Wisdom. All rights pixelated.</footer>
+          <footer className="py-8 text-center font-mono">© 2023 Pixel Wisdom. All rights pixelated.</footer>
         </div>
         <FloatingPixels />
         <SoundEffect />
