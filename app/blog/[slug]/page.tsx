@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 // TODO: Replace with real content loading from MDX files
+// DEPLOYMENT REFRESH: Force rebuild with timestamp
 const blogPosts = {
   "financial-data-apis-comprehensive-guide": {
     title: "Financial Data APIs for AI-Augmented Valuation: A Comprehensive Guide",
