@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 interface BlogPost {
-  id: string
+  slug: string
   title: string
   excerpt: string
   date: string
@@ -21,7 +21,7 @@ export default function PostCard({ post, className = '' }: PostCardProps) {
       {/* Post Header */}
       <div className="mb-4">
         <h3 className="text-xl font-pixel mb-2 hover:text-green-300 transition-colors">
-          <Link href={`/blog/${post.id}`}>
+          <Link href={`/blog/${post.slug}`}>
             {post.title}
           </Link>
         </h3>
@@ -50,7 +50,7 @@ export default function PostCard({ post, className = '' }: PostCardProps) {
         </div>
         
         <Link 
-          href={`/blog/${post.id}`}
+          href={`/blog/${post.slug}`}
           className="px-4 py-2 bg-green-600 text-black font-pixel text-sm rounded hover:bg-green-500 transition-colors"
         >
           Read More →

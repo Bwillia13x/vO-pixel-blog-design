@@ -41,8 +41,8 @@ export default function Home() {
                 .slice(0, 3)
                 .map((post) => (
                   <Link
-                    key={post.id}
-                    href={`/post/${post.id}`}
+                    key={post.slug}
+                    href={`/blog/${post.slug}`}
                     className="block p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors"
                   >
                     <h4 className="text-lg font-pixel mb-2">{post.title}</h4>

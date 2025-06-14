@@ -17,8 +17,8 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
       <div className="grid gap-6">
         {categoryPosts.map((post) => (
           <Link
-            key={post.id}
-            href={`/post/${post.id}`}
+            key={post.slug}
+            href={`/blog/${post.slug}`}
             className="block p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors"
           >
             <h3 className="text-xl font-pixel mb-2">{post.title}</h3>

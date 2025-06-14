@@ -4,15 +4,13 @@ import Link from 'next/link'
 import { posts } from '@/app/data/posts'
 import ReactMarkdown from 'react-markdown'
 
-type Params = { params: Promise<{ slug: string }> }
-
 export async function generateStaticParams() {
   return posts.map((post) => ({
     slug: post.slug,
   }))
 }
 
-export async function generateMetadata({ params }: Params): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
   const post = posts.find(p => p.slug === slug)
   
@@ -34,7 +32,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   }
 }
 
-export default async function BlogPostPage({ params }: Params) {
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const post = posts.find(p => p.slug === slug)
 
