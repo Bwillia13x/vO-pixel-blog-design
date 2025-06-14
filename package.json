@@ -1,12 +1,23 @@
 {
-  "name": "my-v0-project",
-  "version": "0.1.0",
+  "name": "pixel-wisdom-blog",
+  "version": "1.0.0",
   "private": true,
+  "description": "A modern pixel-themed developer blog and portfolio built with Next.js",
+  "author": "Pixel Wisdom",
+  "homepage": "https://pixelwisdom.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bwillia13x/vO-pixel-blog-design.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "build:analyze": "ANALYZE=true next build",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
