@@ -1,146 +1,104 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
-// Remove force-dynamic to allow static generation 
-// export const dynamic = 'force-dynamic'
-// export const revalidate = 0
-
-// TODO: Replace with real content loading from MDX files
-// DEPLOYMENT REFRESH: Force rebuild with timestamp
-// Cache Buster: Force regeneration every deploy
-const CACHE_BUSTER = Date.now()
-console.log('Blog cache buster:', CACHE_BUSTER)
 const blogPosts = {
   "financial-data-apis-for-ai-valuation": {
     title: "Financial Data APIs for AI-Augmented Valuation: A Comprehensive Research Guide",
-    content: `Building an AI-augmented valuation platform requires access to comprehensive financial data. After extensive research into financial data providers, I've compiled this detailed comparison to help developers choose the right APIs for their projects.
+    content: `This is a comprehensive guide to financial data APIs for AI-augmented valuation platforms.
 
-## Project Context and Requirements
+## Introduction
 
-When building "Intrinsic Edge," a 12-week MVP for a value-investing platform using a modern stack (Next.js frontend, FastAPI backend, DuckDB+Parquet for local time-series, PGVector for embeddings), the chosen financial data APIs must provide:
+Building an AI-augmented valuation platform requires access to comprehensive financial data. This guide compares 7 popular financial data APIs.
 
-- **Comprehensive Fundamentals**: Deep company financials with 10+ years of history
-- **Market Data**: Historical stock price time series and real-time quotes  
-- **Developer-Friendly**: Clear documentation and generous free tiers for prototyping
-- **Permissive Licensing**: Suitable for prototype applications without hefty subscriptions
+## Key Requirements
 
-## API Comparison Overview
+- Comprehensive fundamentals with 10+ years of history
+- Market data and historical prices  
+- Developer-friendly with good documentation
+- Reasonable pricing for prototypes
 
-I evaluated 7 popular financial data APIs based on coverage, pricing, and developer experience:
+## API Comparison
 
-### 1. Alpha Vantage
-**Best for: Reliable basic data with official exchange licensing**
-- Free Tier: ~25 API calls/day, no credit card required
-- Pricing: Premium starts at $50/month
-- Pros: Official NASDAQ data vendor, comprehensive documentation
-- Cons: Limited fundamentals depth, strict rate limiting
+### 1. Financial Modeling Prep (FMP)
+- Free tier: 250 calls/day
+- Pricing: $22-149/month
+- Pros: 150+ endpoints, structured data
+- Cons: 5-year limit on free tier
 
-### 2. Financial Modeling Prep (FMP)
-**Best for: Comprehensive endpoints and structured data**
-- Free Tier: 250 calls/day with most endpoints accessible
-- Pricing: $22-149/month for premium features
-- Pros: 150+ API endpoints, well-structured JSON responses
-- Cons: 5-year history limit on free tier, licensing restrictions
+### 2. Alpha Vantage  
+- Free tier: ~25 calls/day
+- Pricing: $50+/month
+- Pros: Official data vendor
+- Cons: Limited fundamentals
 
-### 3. Yahoo Finance (Unofficial)
-**Best for: Free historical price data**
-- Free Tier: 100% free via yfinance Python library
-- Pricing: No official paid tier
-- Pros: Decades of price history, easy pandas integration
-- Cons: Unofficial API, limited fundamentals, licensing concerns
+### 3. Yahoo Finance (yfinance)
+- Free tier: Unlimited (unofficial)
+- Pricing: Free
+- Pros: Decades of price data
+- Cons: Unofficial, licensing concerns
 
-### 4. Tiingo
-**Best for: Clean price data with optional fundamentals**
-- Free Tier: 1000 calls/day for price data only
-- Pricing: $10/month + add-ons for fundamentals
-- Pros: 30+ years of price history, solid documentation
-- Cons: Fundamentals require paid subscription, US-only
+## Recommendation
 
-### 5. Polygon.io
-**Best for: Real-time data and basic fundamentals**
-- Free Tier: 5 calls/minute, all endpoints accessible
-- Pricing: $29/month for higher limits
-- Pros: Real-time quotes, developer-friendly docs
-- Cons: Limited fundamentals depth, US-only
+For MVP development, use a combination of:
+1. **Financial Modeling Prep** for fundamentals
+2. **Yahoo Finance** for historical prices
+3. **Finnhub** for extended history
 
-### 6. Finnhub
-**Best for: Global coverage and earnings transcripts**
-- Free Tier: 60 calls/minute, fundamentals included
-- Pricing: $49-99/month for premium features
-- Pros: Global coverage, earnings call transcripts, 30+ years history
-- Cons: Data accuracy concerns, complex API surface
-
-### 7. EOD Historical Data
-**Best for: Complete all-in-one solution**
-- Free Tier: Limited trial access
-- Pricing: $60/month for full fundamentals access
-- Pros: 30 years global data, high quality, comprehensive
-- Cons: Expensive for prototyping, no meaningful free tier
-
-## Key Findings
-
-**No completely free API offers unlimited 10+ year fundamentals.** The best approach combines multiple sources:
-
-- **Primary**: Financial Modeling Prep for structured fundamentals (5 years free)
-- **Secondary**: Yahoo Finance for historical prices (decades free)
-- **Supplemental**: Finnhub for extended history and transcripts
-
-## Recommended Implementation Strategy
-
-For the MVP phase, I recommend starting with **FMP + yfinance** combination:
-
-1. **Financial Modeling Prep** for fundamentals and company profiles
-2. **Yahoo Finance** via yfinance for bulk price history downloads
-3. **Finnhub** for gaps like extended history or earnings transcripts
-
-### Code Example
-
-\`\`\`python
-import yfinance as yf
-import requests
-import pandas as pd
-
-# Yahoo Finance for price history
-def get_price_history(symbol, period="10y"):
-    ticker = yf.Ticker(symbol)
-    return ticker.history(period=period)
-
-# FMP for fundamentals
-def get_fundamentals(symbol, api_key):
-    url = f"https://financialmodelingprep.com/api/v3/income-statement/{symbol}"
-    response = requests.get(url, params={"apikey": api_key})
-    return response.json()
-
-# Finnhub for extended data
-def get_earnings_transcripts(symbol, api_key):
-    url = f"https://finnhub.io/api/v1/stock/transcripts"
-    params = {"symbol": symbol, "token": api_key}
-    response = requests.get(url, params=params)
-    return response.json()
-\`\`\`
-
-## Future Considerations
-
-As the platform scales, consider migrating to **EOD Historical Data** for:
-- Unified API surface
-- Consistent data quality
-- Global coverage
-- Proper licensing for commercial use
-
-This phased approach balances immediate needs with long-term sustainability, enabling rapid MVP development while maintaining upgrade flexibility.
-
-## Conclusion
-
-The financial data API landscape offers various tradeoffs between cost, coverage, and complexity. For AI-augmented valuation platforms, a multi-source approach during development phases provides the best balance of features and cost-effectiveness.
-
-Start with free tiers to validate your models and user experience, then invest in premium data sources as your platform matures and user base grows.`,
+This approach balances cost and coverage for prototype development.`,
     date: "2025-06-14",
     category: "FinTech",
-    tags: ["FinTech", "API", "AI", "Data Analysis", "Investment", "Python", "Financial Data"],
+    tags: ["FinTech", "API", "AI"],
     readTime: "15 min read"
-  },
-  "test-post": {
+  }
+}
+
+interface BlogPostPageProps {
+  params: {
+    slug: string
+  }
+}
+
+export default function BlogPostPage({ params }: BlogPostPageProps) {
+  const post = blogPosts[params.slug as keyof typeof blogPosts]
+  
+  if (!post) {
+    notFound()
+  }
+
+  return (
+    <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
+      <article>
+        <header style={{ marginBottom: '2rem', paddingBottom: '1rem', borderBottom: '1px solid #333' }}>
+          <h1 style={{ fontSize: '2rem', marginBottom: '1rem', lineHeight: '1.2' }}>
+            {post.title}
+          </h1>
+          <div style={{ fontSize: '0.875rem', color: '#666', display: 'flex', gap: '1rem' }}>
+            <span>{post.category}</span>
+            <span>{post.date}</span>
+            <span>{post.readTime}</span>
+          </div>
+        </header>
+        
+        <div style={{ lineHeight: '1.6' }}>
+          {post.content.split('\n').map((paragraph, index) => {
+            if (paragraph.startsWith('## ')) {
+              return <h2 key={index} style={{ fontSize: '1.5rem', marginTop: '2rem', marginBottom: '1rem' }}>{paragraph.substring(3)}</h2>
+            }
+            if (paragraph.startsWith('### ')) {
+              return <h3 key={index} style={{ fontSize: '1.25rem', marginTop: '1.5rem', marginBottom: '0.5rem' }}>{paragraph.substring(4)}</h3>
+            }
+            if (paragraph.startsWith('- ')) {
+              return <li key={index} style={{ marginLeft: '1rem' }}>{paragraph.substring(2)}</li>
+            }
+            if (paragraph.trim() === '') {
+              return <br key={index} />
+            }
+            return <p key={index} style={{ marginBottom: '1rem' }}>{paragraph}</p>
+          })}
+        </div>
+      </article>
+    </div>
+  )
+}
     title: "Test Post",
     content: "This is a simple test post to verify routing works.",
     date: "2025-06-14",

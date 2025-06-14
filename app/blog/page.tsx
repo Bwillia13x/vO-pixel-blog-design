@@ -6,98 +6,64 @@ export const metadata: Metadata = {
   description: 'Articles, insights, and thoughts on technology, AI development, and digital creativity.',
 }
 
-// TODO: Replace with real blog posts from content source
+// Simplified blog posts for testing
 const blogPosts = [
   {
     id: "financial-data-apis-for-ai-valuation",
     title: "Financial Data APIs for AI-Augmented Valuation: A Comprehensive Research Guide",
-    excerpt: "A detailed comparison and research analysis of 7 financial data APIs for building AI-powered investment platforms, complete with pricing, coverage, and implementation recommendations.",
+    excerpt: "A detailed comparison and research analysis of 7 financial data APIs for building AI-powered investment platforms.",
     date: "2025-06-14",
     category: "FinTech",
-    tags: ["FinTech", "API", "AI", "Data Analysis", "Investment", "Python", "Financial Data"],
-    readTime: "15 min read"
-  },
-  {
-    id: "financial-data-apis-comprehensive-guide",
-    title: "Financial Data APIs for AI-Augmented Valuation: A Comprehensive Guide",
-    excerpt: "A detailed comparison of 7 financial data APIs for building AI-powered investment platforms, including free tiers, pricing, and integration recommendations.",
-    date: "2025-06-14",
-    category: "FinTech",
-    tags: ["FinTech", "API", "AI", "Data Analysis", "Investment", "Python"],
+    tags: ["FinTech", "API", "AI"],
     readTime: "15 min read"
   },
   {
     id: "building-my-digital-home",
-    title: "Building My Digital Home: The Journey of Creating This Site",
-    excerpt: "The story behind building this pixel-themed portfolio site using Next.js, AI tools, and modern web development practices.",
+    title: "Building My Digital Home",
+    excerpt: "The story behind building this pixel-themed portfolio site.",
     date: "2025-06-14",
     category: "Development",
-    tags: ["Web Development", "Next.js", "AI Tools", "Portfolio"],
+    tags: ["Web Development", "Next.js"],
     readTime: "8 min read"
-  },
-  {
-    id: "hello-world",
-    title: "Hello World: Building with Pixel Wisdom",
-    excerpt: "Welcome to my blog! Here's what you can expect to find as I document my journey through tech, AI, and creative development.",
-    date: "2025-06-14",
-    category: "General",
-    tags: ["Welcome", "Blog", "Tech"],
-    readTime: "3 min read"
-  },
-  {
-    id: "ai-driven-development",
-    title: "The Future of AI-Driven Development",
-    excerpt: "Exploring how tools like Cursor and Windsurf are transforming the way we write code, and what it means for developers.",
-    date: "2025-06-10",
-    category: "AI",
-    tags: ["AI", "Development", "Tools"],
-    readTime: "5 min read"
-  },
-  {
-    id: "pixel-art-in-web-design",
-    title: "Bringing Pixel Art Aesthetics to Modern Web Design",
-    excerpt: "How to incorporate retro pixel art elements into contemporary web applications without sacrificing usability.",
-    date: "2025-06-08",
-    category: "Design",
-    tags: ["Design", "Pixel Art", "CSS"],
-    readTime: "7 min read"
   }
 ]
 
-const categories = ["All", "AI", "Design", "Development", "FinTech", "General"]
-
 export default function BlogPage() {
   return (
-    <div className="max-w-4xl mx-auto">
-      <h1 className="text-3xl font-pixel mb-8 text-center">Blog</h1>
+    <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
+      <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Blog</h1>
+      <p style={{ marginBottom: '2rem' }}>Articles and insights on technology and development.</p>
       
-      <div className="mb-8 text-center">
-        <p className="font-mono text-lg mb-6">
-          Articles, insights, and thoughts on technology, AI development, and digital creativity.
+      <div style={{ border: '1px solid #ccc', padding: '1rem', marginBottom: '1rem' }}>
+        <h2 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>
+          <a href="/blog/financial-data-apis-for-ai-valuation" style={{ color: '#4ade80' }}>
+            Financial Data APIs for AI-Augmented Valuation
+          </a>
+        </h2>
+        <p style={{ color: '#888', marginBottom: '0.5rem' }}>
+          A comprehensive research guide comparing 7 financial data APIs for building AI-powered investment platforms.
         </p>
-        
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-2 mb-6">
-          {categories.map((category) => (
-            <button
-              key={category}
-              className="px-3 py-1 bg-gray-800 text-green-400 font-mono text-sm rounded hover:bg-gray-700 transition-colors"
-            >
-              {category}
-            </button>
-          ))}
+        <div style={{ fontSize: '0.875rem', color: '#666' }}>
+          <span>FinTech</span> • <span>June 14, 2025</span> • <span>15 min read</span>
         </div>
       </div>
-
-      {/* Blog Posts Grid */}
-      {blogPosts.length > 0 ? (
-        <div className="grid gap-6">
-          {blogPosts.map((post) => (
-            <article key={post.id} className="bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition-colors">
-              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
-                <div className="flex-1">
-                  <h2 className="text-xl font-pixel mb-2 hover:text-green-300 transition-colors">
-                    <Link href={`/blog/${post.id}`}>
+      
+      <div style={{ border: '1px solid #ccc', padding: '1rem', marginBottom: '1rem' }}>
+        <h2 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>
+          <a href="/blog/building-my-digital-home" style={{ color: '#4ade80' }}>
+            Building My Digital Home
+          </a>
+        </h2>
+        <p style={{ color: '#888', marginBottom: '0.5rem' }}>
+          The story behind building this pixel-themed portfolio site using modern web technologies.
+        </p>
+        <div style={{ fontSize: '0.875rem', color: '#666' }}>
+          <span>Development</span> • <span>June 14, 2025</span> • <span>8 min read</span>
+        </div>
+      </div>
+    </div>
+  )
+}
                       {post.title}
                     </Link>
                   </h2>
