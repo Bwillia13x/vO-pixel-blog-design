@@ -70,13 +70,13 @@ export default function Home() {
         <Link href="/projects/current" className="bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition-colors text-center">
           <h3 className="font-pixel text-lg mb-2">Current Work</h3>
           <p className="font-mono text-sm text-gray-300">
-            See what I'm building right now and what's coming next
+            See what I&apos;m building right now and what&apos;s coming next
           </p>
         </Link>
         <Link href="/contact" className="bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition-colors text-center">
           <h3 className="font-pixel text-lg mb-2">Get In Touch</h3>
           <p className="font-mono text-sm text-gray-300">
-            Have a project idea or want to collaborate? Let's talk!
+            Have a project idea or want to collaborate? Let&apos;s talk!
           </p>
         </Link>
       </section>

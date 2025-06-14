@@ -45,7 +45,7 @@ export default function CurrentProjectsPage() {
       
       <div className="mb-8 text-center">
         <p className="font-mono text-lg mb-4">
-          Here's what I'm working on right now and what's coming next.
+          Here&apos;s what I&apos;m working on right now and what&apos;s coming next.
         </p>
         <Link 
           href="/projects" 

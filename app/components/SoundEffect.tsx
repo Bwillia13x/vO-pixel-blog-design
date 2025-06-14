@@ -6,7 +6,8 @@ const SoundEffect = () => {
   const audioContextRef = useRef<AudioContext | null>(null)
 
   useEffect(() => {
-    audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)()
+    const AudioContextClass = window.AudioContext || (window as typeof window & { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+    audioContextRef.current = new AudioContextClass();
 
     const playSound = () => {
       if (audioContextRef.current) {

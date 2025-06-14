@@ -35,10 +35,10 @@ export default function ProjectsPage() {
         <div className="bg-gray-800 rounded-lg p-8 text-center">
           <h3 className="text-xl font-pixel mb-4">Projects Coming Soon</h3>
           <p className="font-mono mb-4">
-            I'm currently working on some exciting projects that will be showcased here.
+            I&apos;m currently working on some exciting projects that will be showcased here.
           </p>
           <p className="font-mono text-sm text-gray-400">
-            Check back soon or visit the current projects page to see what I'm working on now!
+            Check back soon or visit the current projects page to see what I&apos;m working on now!
           </p>
         </div>
       )}

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Monitor, Palette, DollarSign, Home, User, Briefcase, BookOpen, Mail } from "lucide-react"
+import { Monitor, Home, User, Briefcase, BookOpen, Mail } from "lucide-react"
 
 const NavMenu = () => {
   return (

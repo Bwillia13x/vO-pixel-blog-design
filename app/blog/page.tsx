@@ -113,7 +113,7 @@ export default function BlogPage() {
         <div className="bg-gray-800 rounded-lg p-8 text-center">
           <h3 className="text-xl font-pixel mb-4">Coming Soon</h3>
           <p className="font-mono mb-4">
-            I'm preparing some great content for you. Check back soon for articles on:
+            I&apos;m preparing some great content for you. Check back soon for articles on:
           </p>
           <ul className="font-mono text-sm space-y-2">
             <li>• AI-powered development workflows</li>

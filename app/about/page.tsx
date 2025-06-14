@@ -15,7 +15,7 @@ export default function AboutPage() {
           <div className="bg-gray-800 rounded-lg p-6">
             <h2 className="text-xl font-pixel mb-4">Who I Am</h2>
             <p className="font-mono mb-4">
-              Welcome to my digital realm! I'm a passionate developer exploring the intersection of 
+              Welcome to my digital realm! I&apos;m a passionate developer exploring the intersection of 
               AI, web development, and creative technology.
             </p>
             <p className="font-mono">
@@ -44,11 +44,11 @@ export default function AboutPage() {
         <h2 className="text-xl font-pixel mb-4">My Journey</h2>
         <p className="font-mono mb-4">
           My development journey has been driven by curiosity and a love for problem-solving. 
-          I'm particularly fascinated by how AI tools like Cursor and Windsurf are transforming 
+          I&apos;m particularly fascinated by how AI tools like Cursor and Windsurf are transforming 
           the development experience.
         </p>
         <p className="font-mono">
-          When I'm not coding, you'll find me experimenting with pixel art, exploring new 
+          When I&apos;m not coding, you&apos;ll find me experimenting with pixel art, exploring new 
           frameworks, or writing about the latest developments in tech.
         </p>
       </div>

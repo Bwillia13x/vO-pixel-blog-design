@@ -13,14 +13,14 @@ export default function ContactPage() {
       
       <div className="mb-8 text-center">
         <p className="font-mono text-lg">
-          Whether you have a project idea, want to collaborate, or just want to chat about tech - I'd love to hear from you!
+          Whether you have a project idea, want to collaborate, or just want to chat about tech - I&apos;d love to hear from you!
         </p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-8">
         {/* Contact Info */}
         <div className="bg-gray-800 rounded-lg p-6">
-          <h2 className="text-xl font-pixel mb-6">Let's Connect</h2>
+          <h2 className="text-xl font-pixel mb-6">Let&apos;s Connect</h2>
           
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
@@ -64,7 +64,7 @@ export default function ContactPage() {
           </div>
 
           <div className="mt-6 pt-6 border-t border-gray-700">
-            <h3 className="font-pixel text-sm mb-3">What I'm Looking For</h3>
+            <h3 className="font-pixel text-sm mb-3">What I&apos;m Looking For</h3>
             <ul className="font-mono text-sm space-y-2 text-gray-300">
               <li>• Collaboration opportunities</li>
               <li>• Interesting project discussions</li>
@@ -166,14 +166,14 @@ export default function ContactPage() {
           <div>
             <h3 className="font-pixel text-sm mb-2">What types of projects are you interested in?</h3>
             <p className="font-mono text-sm text-gray-300">
-              I'm particularly interested in AI-driven applications, modern web development, and creative coding projects. Open to both collaborative and consulting opportunities.
+              I&apos;m particularly interested in AI-driven applications, modern web development, and creative coding projects. Let&apos;s build something amazing together!
             </p>
           </div>
           
           <div>
             <h3 className="font-pixel text-sm mb-2">Do you offer consulting services?</h3>
             <p className="font-mono text-sm text-gray-300">
-              Yes! I provide consulting for Next.js development, AI integration, and modern web architecture. Let's discuss your needs.
+              Yes! I provide consulting for Next.js development, AI integration, and modern web architecture. Let&apos;s discuss your needs.
             </p>
           </div>
         </div>
