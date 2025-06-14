@@ -54,6 +54,10 @@ cd vO-pixel-blog-design
 # Install dependencies
 pnpm install
 
+# Copy environment template
+cp .env.example .env
+# Edit `.env` with your SMTP and site details
+
 # Start development server
 pnpm dev
 ```
@@ -65,9 +69,13 @@ Visit `http://localhost:3000` to see your pixel blog in action!
 ```bash
 pnpm dev          # Start development server
 pnpm build        # Build for production
-pnpm start        # Start production server  
+pnpm start        # Start production server
 pnpm lint         # Run ESLint
+pnpm test         # Run unit tests
 ```
+
+### Continuous Integration
+This repo runs tests on every push using GitHub Actions.
 
 ## Project Structure
 
