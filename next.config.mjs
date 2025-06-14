@@ -7,6 +7,39 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: process.env.NODE_ENV === 'development',
   },
+  // Force cache invalidation
+  generateBuildId: async () => {
+    return `build-${Date.now()}-${Math.random().toString(36).substring(7)}`
+  },
+  // Disable static optimization for blog pages to force regeneration
+  experimental: {
+    staleTimes: {
+      dynamic: 0,
+      static: 0,
+    },
+  },
+  // Force cache invalidation with headers
+  async headers() {
+    return [
+      {
+        source: '/blog/:slug*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0',
+          },
+          {
+            key: 'CDN-Cache-Control',
+            value: 'no-store',
+          },
+          {
+            key: 'Vercel-CDN-Cache-Control',
+            value: 'no-store',
+          },
+        ],
+      },
+    ]
+  },
   images: {
     // Enable image optimization for better performance
     formats: ['image/webp', 'image/avif'],

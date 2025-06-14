@@ -2,8 +2,15 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
+// Force dynamic rendering to bypass cache
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 // TODO: Replace with real content loading from MDX files
 // DEPLOYMENT REFRESH: Force rebuild with timestamp
+// Cache Buster: Force regeneration every deploy
+const CACHE_BUSTER = Date.now()
+console.log('Blog cache buster:', CACHE_BUSTER)
 const blogPosts = {
   "financial-data-apis-comprehensive-guide": {
     title: "Financial Data APIs for AI-Augmented Valuation: A Comprehensive Guide",
