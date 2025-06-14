@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 // TODO: Replace with real blog posts from content source
 const blogPosts = [
   {
+    id: "financial-data-apis-for-ai-valuation",
+    title: "Financial Data APIs for AI-Augmented Valuation: A Comprehensive Research Guide",
+    excerpt: "A detailed comparison and research analysis of 7 financial data APIs for building AI-powered investment platforms, complete with pricing, coverage, and implementation recommendations.",
+    date: "2025-06-14",
+    category: "FinTech",
+    tags: ["FinTech", "API", "AI", "Data Analysis", "Investment", "Python", "Financial Data"],
+    readTime: "15 min read"
+  },
+  {
     id: "financial-data-apis-comprehensive-guide",
     title: "Financial Data APIs for AI-Augmented Valuation: A Comprehensive Guide",
     excerpt: "A detailed comparison of 7 financial data APIs for building AI-powered investment platforms, including free tiers, pricing, and integration recommendations.",
