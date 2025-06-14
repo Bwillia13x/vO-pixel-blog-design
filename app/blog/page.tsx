@@ -10,10 +10,10 @@ export default function BlogPage() {
       
       <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
         {posts.map((post) => (
-          <article key={post.id} style={{ border: '1px solid #333', borderRadius: '8px', padding: '1.5rem' }}>
+          <article key={post.slug} style={{ border: '1px solid #333', borderRadius: '8px', padding: '1.5rem' }}>
             <h2 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>
               <Link 
-                href={`/blog/${post.id.toString()}`}
+                href={`/blog/${post.slug}`}
                 style={{ color: '#4ade80', textDecoration: 'none' }}
               >
                 {post.title}

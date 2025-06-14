@@ -2,20 +2,19 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { posts } from '@/app/data/posts'
+import ReactMarkdown from 'react-markdown'
 
-interface BlogPostPageProps {
-  params: Promise<{ slug: string }>
-}
+type Params = { params: Promise<{ slug: string }> }
 
 export async function generateStaticParams() {
   return posts.map((post) => ({
-    slug: post.id.toString(),
+    slug: post.slug,
   }))
 }
 
-export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params
-  const post = posts.find(p => p.id.toString() === slug)
+  const post = posts.find(p => p.slug === slug)
   
   if (!post) {
     return {
@@ -30,14 +29,14 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       title: post.title,
       description: post.content.substring(0, 160) + '...',
       type: 'article',
-      publishedTime: new Date().toISOString(),
+      publishedTime: post.date ? new Date(post.date).toISOString() : undefined,
     },
   }
 }
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
+export default async function BlogPostPage({ params }: Params) {
   const { slug } = await params
-  const post = posts.find(p => p.id.toString() === slug)
+  const post = posts.find(p => p.slug === slug)
 
   if (!post) {
     notFound()
@@ -56,11 +55,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </header>
         
         <div style={{ lineHeight: '1.7', color: '#ddd' }}>
-          {post.content.split('\n\n').map((paragraph, index) => (
-            <p key={index} style={{ marginBottom: '1.5rem' }}>
-              {paragraph}
-            </p>
-          ))}
+          <ReactMarkdown>{post.content}</ReactMarkdown>
         </div>
 
         <footer style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid #333' }}>
