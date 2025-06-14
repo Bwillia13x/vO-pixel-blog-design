@@ -9,6 +9,24 @@ export const metadata: Metadata = {
 // TODO: Replace with real blog posts from content source
 const blogPosts = [
   {
+    id: "financial-data-apis-comprehensive-guide",
+    title: "Financial Data APIs for AI-Augmented Valuation: A Comprehensive Guide",
+    excerpt: "A detailed comparison of 7 financial data APIs for building AI-powered investment platforms, including free tiers, pricing, and integration recommendations.",
+    date: "2025-06-14",
+    category: "FinTech",
+    tags: ["FinTech", "API", "AI", "Data Analysis", "Investment", "Python"],
+    readTime: "15 min read"
+  },
+  {
+    id: "building-my-digital-home",
+    title: "Building My Digital Home: The Journey of Creating This Site",
+    excerpt: "The story behind building this pixel-themed portfolio site using Next.js, AI tools, and modern web development practices.",
+    date: "2025-06-14",
+    category: "Development",
+    tags: ["Web Development", "Next.js", "AI Tools", "Portfolio"],
+    readTime: "8 min read"
+  },
+  {
     id: "hello-world",
     title: "Hello World: Building with Pixel Wisdom",
     excerpt: "Welcome to my blog! Here's what you can expect to find as I document my journey through tech, AI, and creative development.",
@@ -37,7 +55,7 @@ const blogPosts = [
   }
 ]
 
-const categories = ["All", "AI", "Design", "Development", "General"]
+const categories = ["All", "AI", "Design", "Development", "FinTech", "General"]
 
 export default function BlogPage() {
   return (
