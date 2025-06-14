@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
+import nodemailer from 'nodemailer'
+import siteConfig from '@/lib/site-config'
 
 export async function POST(request: NextRequest) {
   try {
@@ -27,28 +29,19 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // TODO: Replace with actual email service
-    // For now, we'll just log the message and return success
-    console.log('📧 New contact form submission:', {
-      name,
-      email,
-      message,
-      timestamp: new Date().toISOString()
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT) || 587,
+      secure: false,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
     })
 
-    // In production, you would send the email here:
-    // - Using Resend.com: https://resend.com/docs/send-with-nextjs
-    // - Using Nodemailer with Gmail SMTP
-    // - Using SendGrid, Mailgun, etc.
-
-    /* Example with Resend:
-    
-    import { Resend } from 'resend'
-    const resend = new Resend(process.env.RESEND_API_KEY)
-
-    await resend.emails.send({
-      from: 'contact@yourdomain.com',
-      to: siteConfig.social.email,
+    await transporter.sendMail({
+      from: process.env.SMTP_FROM,
+      to: process.env.CONTACT_TO || siteConfig.social.email,
       subject: `New contact from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
@@ -56,10 +49,8 @@ export async function POST(request: NextRequest) {
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Message:</strong></p>
         <p>${message.replace(/\n/g, '<br>')}</p>
-      `
+      `,
     })
-    
-    */
 
     return NextResponse.json(
       { 
