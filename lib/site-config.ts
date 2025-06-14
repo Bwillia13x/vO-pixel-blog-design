@@ -27,19 +27,19 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  name: "Pixel Wisdom",
-  title: "Pixel Wisdom - Tech Blog & Portfolio",
-  description: "Personal blog and portfolio showcasing tech projects, AI development, and digital insights with a retro pixel aesthetic.",
-  url: "https://pixelwisdom.dev", // Update with actual domain
+  name: "Benjamin Williams",
+  title: "Benjamin Williams - Developer & Creative Technologist",
+  description: "Full-stack developer passionate about AI-driven development, modern web technologies, and creating pixel-perfect digital experiences.",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://v-o-pixel-blog-design.vercel.app",
   ogImage: "/og-image.png",
-  creator: "Pixel Wisdom",
-  keywords: ["tech", "AI", "development", "portfolio", "blog", "pixel art", "Next.js", "TypeScript"],
+  creator: "Benjamin Williams",
+  keywords: ["full-stack", "developer", "AI", "Next.js", "TypeScript", "React", "web development", "creative technology"],
   social: {
-    // Configure these when ready to go live
-    // github: "https://github.com/username",
-    // linkedin: "https://linkedin.com/in/username",
-    // twitter: "https://twitter.com/username",
-    email: "hello@pixelwisdom.dev"
+    // Add your social links when ready
+    // github: "https://github.com/benjaminwilliams",
+    // linkedin: "https://linkedin.com/in/benjaminwilliams",
+    // twitter: "https://twitter.com/benjaminwilliams",
+    email: "hello@benjaminwilliams.dev"
   },
   navigation: {
     main: [

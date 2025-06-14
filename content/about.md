@@ -1,19 +1,28 @@
 # About Me
 
-Hi there! Welcome to my digital space where pixels meet purpose and code becomes creativity.
+Hey there! I'm Benjamin Williams, a developer who loves building things that matter.
 
 ## Who I Am
 
-I'm a passionate developer exploring the fascinating intersection of artificial intelligence, modern web development, and creative technology. My journey in tech has been driven by curiosity, a love for problem-solving, and an appreciation for both the technical and artistic sides of development.
+I'm a full-stack developer with a passion for creating elegant solutions to complex problems. My journey in tech has been driven by curiosity, continuous learning, and a desire to build experiences that make a difference.
+
+When I'm not coding, you'll find me exploring new technologies, contributing to open source projects, or diving deep into the latest developments in AI and machine learning.
 
 ## What I Do
 
-I specialize in building modern, responsive web applications using the latest technologies:
+I specialize in modern web development with a focus on:
 
-- **Frontend Development**: React, Next.js, TypeScript, and Tailwind CSS
-- **AI Integration**: Working with LLMs, AI-powered development tools, and intelligent user experiences
-- **Creative Coding**: Bringing artistic elements into functional web applications
-- **Developer Experience**: Optimizing workflows and exploring new tools that make coding more enjoyable
+- **Full-Stack Development**: Next.js, React, TypeScript, and Node.js
+- **AI Integration**: Building intelligent applications and leveraging AI tools for enhanced productivity
+- **User Experience**: Creating intuitive, accessible, and performant web applications
+- **Developer Tools**: Exploring and building tools that improve the development experience
+
+## My Tech Stack
+
+**Frontend:** React, Next.js, TypeScript, Tailwind CSS, Framer Motion  
+**Backend:** Node.js, Express, PostgreSQL, Prisma  
+**Tools:** VS Code, Git, Docker, Vercel, AWS  
+**AI Tools:** Cursor, GitHub Copilot, Various LLMs
 
 ## My Approach
 

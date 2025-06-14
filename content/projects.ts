@@ -19,43 +19,72 @@ export interface CurrentProject extends Project {
   highlights?: string[]
 }
 
-// Sample completed projects - replace with real projects
+// Sample completed projects - replace with your real projects
 export const projects: Project[] = [
   {
-    id: "pixel-blog-template",
-    title: "Pixel Blog Template",
-    description: "A modern, responsive blog template with pixel aesthetic. Built with Next.js 15, TypeScript, and Tailwind CSS.",
-    tags: ["Next.js", "TypeScript", "Tailwind", "Blog Template"],
+    id: "pixel-blog-v1",
+    title: "Pixel Blog Portfolio",
+    description: "A modern portfolio and blog site with retro pixel aesthetics. Features responsive design, SEO optimization, and AI-assisted development workflow.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
     year: 2025,
     status: "completed",
+    demo: "https://v-o-pixel-blog-design.vercel.app",
     featured: true
-    // TODO: Add real GitHub and demo links when available
-    // github: "https://github.com/username/pixel-blog-template",
-    // demo: "https://pixel-blog-template.vercel.app"
+  },
+  {
+    id: "ai-productivity-suite",
+    title: "AI Developer Tools",
+    description: "A collection of AI-powered productivity tools for developers including code review, documentation generation, and project planning utilities.",
+    tags: ["React", "AI/ML", "Node.js", "TypeScript"],
+    year: 2024,
+    status: "in-progress",
+    featured: true
+  },
+  {
+    id: "fullstack-dashboard",
+    title: "Analytics Dashboard",
+    description: "Modern business intelligence dashboard with real-time data visualization, custom reports, and collaborative features.",
+    tags: ["Next.js", "D3.js", "PostgreSQL", "WebSocket"],
+    year: 2024,
+    status: "completed"
   }
-  // TODO: Add more completed projects
 ]
 
 // Current/ongoing projects
 export const currentProjects: CurrentProject[] = [
   {
-    id: "ai-development-workflow",
-    title: "AI-Powered Development Workflow",
-    description: "Exploring and documenting best practices for AI-assisted development using tools like Cursor and Windsurf.",
-    tags: ["AI", "Developer Tools", "Workflow", "Documentation"],
+    id: "ai-development-tools",
+    title: "AI-Enhanced Development Workflow",
+    description: "Building and documenting a comprehensive AI-assisted development workflow using modern tools like Cursor, GitHub Copilot, and custom integrations.",
+    tags: ["AI", "Developer Experience", "Automation", "Documentation"],
     year: 2025,
     status: "in-progress",
-    progress: 40,
-    startDate: "2025-06",
-    expectedCompletion: "2025-08",
+    progress: 65,
+    startDate: "2025-01",
+    expectedCompletion: "2025-07",
     highlights: [
-      "Comprehensive tool comparison",
+      "AI tool integration and comparison",
+      "Custom development workflow automation",
       "Best practices documentation",
-      "Real-world case studies",
-      "Community resource compilation"
+      "Community resource sharing"
+    ]
+  },
+  {
+    id: "open-source-contributions",
+    title: "Open Source Contributions",
+    description: "Contributing to various open source projects in the React and Next.js ecosystem, focusing on developer experience improvements.",
+    tags: ["Open Source", "React", "Next.js", "Community"],
+    year: 2025,
+    status: "in-progress",
+    progress: 30,
+    startDate: "2025-03",
+    highlights: [
+      "TypeScript type definitions",
+      "Documentation improvements",
+      "Bug fixes and feature enhancements",
+      "Community engagement"
     ]
   }
-  // TODO: Add more current projects
 ]
 
 // Future/planned projects

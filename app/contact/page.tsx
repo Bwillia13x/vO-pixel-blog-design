@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Mail } from 'lucide-react'
+import ContactForm from '../components/ContactForm'
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -53,79 +54,7 @@ export default function ContactPage() {
         </div>
 
         {/* Contact Form */}
-        <div className="bg-gray-800 rounded-lg p-6">
-          <h2 className="text-xl font-pixel mb-6">Send a Message</h2>
-          
-          {/* TODO: Implement actual form handling */}
-          <form className="space-y-4">
-            <div>
-              <label htmlFor="name" className="block font-mono text-sm mb-2">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                className="w-full px-3 py-2 bg-gray-700 text-green-400 font-mono rounded border border-gray-600 focus:border-green-400 focus:outline-none"
-                placeholder="Your name"
-                required
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="email" className="block font-mono text-sm mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="w-full px-3 py-2 bg-gray-700 text-green-400 font-mono rounded border border-gray-600 focus:border-green-400 focus:outline-none"
-                placeholder="your.email@example.com"
-                required
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="subject" className="block font-mono text-sm mb-2">
-                Subject
-              </label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                className="w-full px-3 py-2 bg-gray-700 text-green-400 font-mono rounded border border-gray-600 focus:border-green-400 focus:outline-none"
-                placeholder="What's this about?"
-                required
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="message" className="block font-mono text-sm mb-2">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={5}
-                className="w-full px-3 py-2 bg-gray-700 text-green-400 font-mono rounded border border-gray-600 focus:border-green-400 focus:outline-none resize-y"
-                placeholder="Tell me about your project, idea, or just say hello!"
-                required
-              ></textarea>
-            </div>
-            
-            <button
-              type="submit"
-              className="w-full px-4 py-2 bg-green-600 text-black font-pixel rounded hover:bg-green-500 transition-colors"
-            >
-              Send Message →
-            </button>
-          </form>
-          
-          <p className="font-mono text-xs text-gray-400 mt-4">
-            * Form submission will be implemented in a future update
-          </p>
-        </div>
+        <ContactForm />
       </div>
 
       {/* FAQ Section */}
@@ -155,10 +84,6 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-
-      {/* TODO: Add actual contact form backend integration */}
-      {/* TODO: Add contact form validation */}
-      {/* TODO: Add success/error states for form submission */}
     </div>
   )
 }
