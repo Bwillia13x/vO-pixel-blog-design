@@ -1,9 +1,14 @@
 import { ImageResponse } from 'next/og'
-import { siteConfig } from '@/lib/site-config'
 
 export const runtime = 'edge'
+export const alt = 'Pixel Wisdom - Tech Blog & Portfolio'
+export const size = {
+  width: 1200,
+  height: 630,
+}
+export const contentType = 'image/png'
 
-export async function GET() {
+export default async function Image() {
   return new ImageResponse(
     (
       <div
@@ -45,7 +50,7 @@ export async function GET() {
             🎮
           </div>
           <div style={{ fontSize: 64, fontWeight: 'bold' }}>
-            {siteConfig.name}
+            Pixel Wisdom
           </div>
         </div>
         <div
@@ -56,7 +61,7 @@ export async function GET() {
             maxWidth: 600,
           }}
         >
-          {siteConfig.description}
+          Tech Blog & Portfolio - AI Development & Creative Coding
         </div>
       </div>
     ),
