@@ -12,6 +12,14 @@ export const revalidate = 0
 const CACHE_BUSTER = Date.now()
 console.log('Blog cache buster:', CACHE_BUSTER)
 const blogPosts = {
+  "test-post": {
+    title: "Test Post",
+    content: "This is a simple test post to verify routing works.",
+    date: "2025-06-14",
+    category: "Test",
+    tags: ["Test"],
+    readTime: "1 min read"
+  },
   "financial-data-apis-comprehensive-guide": {
     title: "Financial Data APIs for AI-Augmented Valuation: A Comprehensive Guide",
     content: `Building an AI-augmented valuation platform requires access to comprehensive financial data. After extensive research into financial data providers, I've compiled this detailed comparison to help developers choose the right APIs for their projects.
