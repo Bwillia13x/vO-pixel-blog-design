@@ -7,10 +7,10 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: process.env.NODE_ENV === 'development',
   },
-  // Force cache invalidation
-  generateBuildId: async () => {
-    return `build-${Date.now()}-${Math.random().toString(36).substring(7)}`
-  },
+  // REMOVED: Custom build ID that may be causing issues
+  // generateBuildId: async () => {
+  //   return `build-${Date.now()}-${Math.random().toString(36).substring(7)}`
+  // },
   // Disable static optimization for blog pages to force regeneration
   experimental: {
     staleTimes: {
