@@ -86,13 +86,14 @@ Check back soon for the full article!`,
 }
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const post = blogPosts[params.slug as keyof typeof blogPosts]
+  const { slug } = await params
+  const post = blogPosts[slug as keyof typeof blogPosts]
   
   if (!post) {
     return {
@@ -106,8 +107,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-export default function BlogPostPage({ params }: PageProps) {
-  const post = blogPosts[params.slug as keyof typeof blogPosts]
+export default async function BlogPostPage({ params }: PageProps) {
+  const { slug } = await params
+  const post = blogPosts[slug as keyof typeof blogPosts]
 
   if (!post) {
     notFound()

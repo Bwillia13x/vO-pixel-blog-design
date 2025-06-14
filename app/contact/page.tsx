@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Mail, Github, Linkedin, Twitter } from 'lucide-react'
+import { Mail } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -31,35 +31,12 @@ export default function ContactPage() {
               </div>
             </div>
             
-            {/* TODO: Replace with real social links */}
-            <div className="flex items-center space-x-3">
-              <Github className="w-5 h-5 text-green-400" />
-              <div>
-                <p className="font-mono text-sm text-gray-400">GitHub</p>
-                <a href="#" className="font-mono hover:text-green-300 transition-colors">
-                  @pixelwisdom
-                </a>
-              </div>
-            </div>
-            
-            <div className="flex items-center space-x-3">
-              <Linkedin className="w-5 h-5 text-green-400" />
-              <div>
-                <p className="font-mono text-sm text-gray-400">LinkedIn</p>
-                <a href="#" className="font-mono hover:text-green-300 transition-colors">
-                  /in/pixelwisdom
-                </a>
-              </div>
-            </div>
-            
-            <div className="flex items-center space-x-3">
-              <Twitter className="w-5 h-5 text-green-400" />
-              <div>
-                <p className="font-mono text-sm text-gray-400">Twitter</p>
-                <a href="#" className="font-mono hover:text-green-300 transition-colors">
-                  @pixelwisdom
-                </a>
-              </div>
+            {/* Social Links - Configure in site config */}
+            <div className="text-center p-4 bg-gray-700 rounded">
+              <p className="font-mono text-sm text-gray-300 mb-2">Connect with me:</p>
+              <p className="font-mono text-xs text-gray-400">
+                Social links will be added here once configured in the site settings.
+              </p>
             </div>
           </div>
 
