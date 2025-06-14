@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
-// Force dynamic rendering to bypass cache
-export const dynamic = 'force-dynamic'
-export const revalidate = 0
+// Remove force-dynamic to allow static generation 
+// export const dynamic = 'force-dynamic'
+// export const revalidate = 0
 
 // TODO: Replace with real content loading from MDX files
 // DEPLOYMENT REFRESH: Force rebuild with timestamp
