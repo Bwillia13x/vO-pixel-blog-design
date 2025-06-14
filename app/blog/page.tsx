@@ -20,7 +20,7 @@ const blogPosts = [
   {
     id: "building-my-digital-home",
     title: "Building My Digital Home",
-    excerpt: "The story behind building this pixel-themed portfolio site.",
+    excerpt: "The story behind building this pixel-themed portfolio site using modern web technologies.",
     date: "2025-06-14",
     category: "Development",
     tags: ["Web Development", "Next.js"],

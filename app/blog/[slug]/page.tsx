@@ -48,6 +48,38 @@ This approach balances cost and coverage for prototype development.`,
     category: "FinTech",
     tags: ["FinTech", "API", "AI"],
     readTime: "15 min read"
+  },
+  "building-my-digital-home": {
+    title: "Building My Digital Home",
+    content: `This is the story of how I built this pixel-themed portfolio site using modern web technologies.
+
+## The Vision
+
+I wanted to create a unique digital presence that combined retro aesthetics with modern functionality.
+
+## Technology Stack
+
+- **Frontend**: Next.js 15 with React
+- **Styling**: TailwindCSS with custom pixel themes
+- **Deployment**: Vercel
+- **Content**: Markdown with frontmatter
+
+## Key Features
+
+- Pixel art aesthetics
+- Responsive design
+- Fast loading times
+- SEO optimized
+
+## Challenges and Solutions
+
+Building this site involved several interesting challenges around combining pixel art with modern web standards.
+
+The result is a unique digital home that reflects my personality while maintaining professional functionality.`,
+    date: "2025-06-14",
+    category: "Development",
+    tags: ["Web Development", "Next.js"],
+    readTime: "8 min read"
   }
 }
 
@@ -204,57 +236,35 @@ The financial data landscape offers many options. Choose based on your specific 
     readTime: "15 min read"
   },
   "building-my-digital-home": {
-    title: "Building My Digital Home: The Journey of Creating This Site",
-    content: `Welcome to my digital space! I'm excited to share the story behind building this site and the journey that brought me here.
+    title: "Building My Digital Home",
+    content: `This is the story of how I built this pixel-themed portfolio site using modern web technologies.
 
-## Why Another Developer Portfolio?
+## The Vision
 
-In a world full of developer portfolios, why create another one? For me, this site represents more than just a place to showcase my work—it's a reflection of my approach to development and my passion for creating thoughtful, purposeful digital experiences.
+I wanted to create a unique digital presence that combined retro aesthetics with modern functionality.
 
-## The Tech Stack
+## Technology Stack
 
-I built this site using some of my favorite modern tools:
+- **Frontend**: Next.js 15 with React
+- **Styling**: TailwindCSS with custom pixel themes
+- **Deployment**: Vercel
+- **Content**: Markdown with frontmatter
 
-- **Next.js 15** - For the rock-solid foundation and excellent developer experience
-- **TypeScript** - Because type safety is non-negotiable
-- **Tailwind CSS** - For rapid, maintainable styling
-- **Vercel** - For seamless deployment and excellent performance
+## Key Features
 
-## AI-Assisted Development
+- Pixel art aesthetics
+- Responsive design
+- Fast loading times
+- SEO optimized
 
-One of the most interesting aspects of building this site was leveraging AI tools throughout the development process. I used:
+## Challenges and Solutions
 
-- **Cursor** for intelligent code completion and refactoring
-- **GitHub Copilot** for rapid prototyping and boilerplate generation
-- **AI-powered design tools** for inspiration and rapid iteration
+Building this site involved several interesting challenges around combining pixel art with modern web standards.
 
-This isn't about replacing human creativity—it's about augmenting it. The AI tools helped me focus on the creative and strategic decisions while handling the repetitive tasks.
-
-## The Design Philosophy
-
-The pixel aesthetic isn't just a design choice—it's a nod to the roots of digital creativity. There's something beautiful about the constraint and precision required in pixel art that resonates with clean, purposeful code.
-
-## What's Next?
-
-This site is just the beginning. I'm planning to:
-
-- Share more about my development process and learnings
-- Document interesting technical challenges and solutions
-- Explore the intersection of AI and creativity in web development
-- Build a community around thoughtful, AI-augmented development
-
-## Let's Connect
-
-I'd love to hear from you! Whether you're curious about the technical details, want to discuss AI in development, or just want to chat about web development in general, feel free to reach out.
-
-Thanks for visiting, and welcome to my digital home!
-
----
-
-*This site is open source and continuously evolving. Suggestions are always welcome.*`,
+The result is a unique digital home that reflects my personality while maintaining professional functionality.`,
     date: "2025-06-14",
     category: "Development",
-    tags: ["Web Development", "Next.js", "AI Tools", "Portfolio"],
+    tags: ["Web Development", "Next.js"],
     readTime: "8 min read"
   },
   "hello-world": {
@@ -344,19 +354,26 @@ interface PageProps {
   }>
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = await params
-  const post = blogPosts[slug as keyof typeof blogPosts]
+// Generate metadata for each blog post
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const post = blogPosts[params.slug as keyof typeof blogPosts]
   
   if (!post) {
     return {
-      title: 'Post Not Found'
+      title: 'Post Not Found',
+      description: 'The requested blog post could not be found.',
     }
   }
 
   return {
     title: post.title,
     description: post.content.substring(0, 160) + '...',
+    openGraph: {
+      title: post.title,
+      description: post.content.substring(0, 160) + '...',
+      type: 'article',
+      publishedTime: post.date,
+    },
   }
 }
 
