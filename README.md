@@ -149,6 +149,20 @@ The project is optimized for Vercel deployment:
 2. Connect repository to Vercel
 3. Deploy automatically on push to main
 
+## Testing
+
+Run the unit tests:
+
+```bash
+pnpm test
+```
+
+During development, watch for changes:
+
+```bash
+pnpm test:watch
+```
+
 ## Next Steps
 
 This scaffolding provides the foundation for your pixel blog. Consider adding:
