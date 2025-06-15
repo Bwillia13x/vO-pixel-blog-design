@@ -4,7 +4,7 @@ A modern, pixel-themed developer portfolio and blog built with Next.js 15, featu
 
 - 🎮 Retro pixel aesthetic with modern functionality
 - 🚀 Built with Next.js 15 (App Router), TypeScript, and Tailwind CSS
-- 📱 Fully responsive design with accessible components
+- 📱 Fully responsive design with accessible components; ESLint enforces alt text on images
 - ✨ Interactive elements and pixel-perfect animations
 - 📝 Blog system with MDX support
 - 🎨 Project showcase with current work tracking
@@ -13,6 +13,7 @@ A modern, pixel-themed developer portfolio and blog built with Next.js 15, featu
 ## Features
 
 ### Pages
+
 - **Homepage**: Hero section with navigation to key areas
 - **About**: Personal introduction and developer journey
 - **Projects**: Portfolio showcase with project cards
@@ -21,6 +22,7 @@ A modern, pixel-themed developer portfolio and blog built with Next.js 15, featu
 - **Contact**: Multiple contact methods and FAQ section
 
 ### Components
+
 - Pixel-themed navigation with hover effects
 - Responsive project and blog post cards
 - Interactive floating pixels background
@@ -41,7 +43,8 @@ A modern, pixel-themed developer portfolio and blog built with Next.js 15, featu
 ## Getting Started
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - pnpm (recommended) or npm
 
 ### Installation
@@ -65,7 +68,7 @@ Visit `http://localhost:3000` to see your pixel blog in action!
 ```bash
 pnpm dev          # Start development server
 pnpm build        # Build for production
-pnpm start        # Start production server  
+pnpm start        # Start production server
 pnpm lint         # Run ESLint
 ```
 
@@ -77,7 +80,7 @@ app/
 ├── (pages)/
 │   ├── about/          # About page
 │   ├── blog/           # Blog listing + [slug] dynamic routes
-│   ├── contact/        # Contact page  
+│   ├── contact/        # Contact page
 │   ├── projects/       # Project portfolio + /current
 │   └── category/       # Blog category filtering
 ├── data/               # Static data and content
@@ -89,7 +92,7 @@ components/             # Reusable UI components
 
 content/                # MDX content
 ├── blog/              # Blog posts
-├── about.md           # About page content  
+├── about.md           # About page content
 └── projects.ts        # Project data
 
 lib/
@@ -99,6 +102,7 @@ lib/
 ## Content Management
 
 ### Adding Blog Posts
+
 Create MDX files in `content/blog/` with frontmatter:
 
 ```mdx
@@ -113,6 +117,7 @@ Your content here...
 ```
 
 ### Adding Projects
+
 Update `content/projects.ts` with your project data:
 
 ```typescript
@@ -124,19 +129,21 @@ export const projects = [
     technologies: ["Next.js", "TypeScript"],
     github: "https://github.com/...",
     demo: "https://...",
-    status: "completed"
-  }
-]
+    status: "completed",
+  },
+];
 ```
 
 ## Customization
 
 ### Theming
+
 - Colors defined in `tailwind.config.js`
 - CSS custom properties in `app/globals.css`
 - Pixel fonts and retro styling throughout
 
 ### Components
+
 - All components use TypeScript for type safety
 - Tailwind classes for consistent styling
 - Accessible patterns with proper ARIA attributes

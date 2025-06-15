@@ -1,10 +1,20 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "next/typescript"
+    "next/typescript",
+    "plugin:jsx-a11y/recommended"
   ],
+  "plugins": ["jsx-a11y"],
   "rules": {
     "@next/next/no-html-link-for-pages": "off",
-    "react/no-inline-styles": "off"
+    "react/no-inline-styles": "off",
+    "jsx-a11y/alt-text": [
+      "error",
+      {
+        "elements": ["img"],
+        "img": ["Image"],
+        "components": ["Image"]
+      }
+    ]
   }
 }
