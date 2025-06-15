@@ -52,3 +52,9 @@ echo "Messages will be logged and you can set up email later."
 echo ""
 echo "🎮 Ready to make it yours? Start with step 1!"
 echo "Live site: https://v-o-pixel-blog-design.vercel.app"
+
+# Run tests if a test script exists in package.json
+if jq -e '.scripts.test' package.json >/dev/null 2>&1; then
+  echo "🔍 Running test suite via pnpm test"
+  pnpm test || true
+fi
