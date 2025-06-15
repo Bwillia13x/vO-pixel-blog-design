@@ -7,6 +7,7 @@ A modern, pixel-themed developer portfolio and blog built with Next.js 15, featu
 - 📱 Fully responsive design with accessible components
 - ✨ Interactive elements and pixel-perfect animations
 - 📝 Blog system with MDX support
+- 📡 RSS feed at `/feed.xml` (run `pnpm run gen:rss` to regenerate)
 - 📚 Syntax-highlighted code blocks
 - 🎨 Project showcase with current work tracking
 - 📧 Contact form with multiple ways to connect
@@ -71,6 +72,7 @@ pnpm dev          # Start development server
 pnpm build        # Build for production
 pnpm start        # Start production server
 pnpm lint         # Run ESLint
+pnpm run gen:rss  # Generate RSS feed
 ```
 
 ## Project Structure
@@ -188,7 +190,7 @@ This scaffolding provides the foundation for your pixel blog. Consider adding:
 - [ ] Comment system integration
 - [ ] Analytics and SEO optimization
 - [ ] Additional interactive animations
-- [ ] RSS feed for blog posts
+- [x] RSS feed available at `/feed.xml`
 - [ ] Social media integrations
 
 ## Contributing
