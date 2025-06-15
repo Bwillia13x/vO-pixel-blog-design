@@ -154,6 +154,8 @@ export const projects = [
 Code blocks are highlighted using `rehype-prism-plus` with a custom
 Tailwind-based theme (`styles/prism.css`).
 
+By default, Prism languages for JavaScript, TypeScript, Bash, and JSON are loaded.
+
 To add more languages, register them with `refractor` and generate a
 custom plugin:
 
@@ -195,4 +197,4 @@ This is a personal project, but feel free to fork and adapt for your own use!
 
 ## License
 
-MIT License - see LICENSE file for details# Cache Refresh: Sat Jun 14 14:42:35 MDT 2025
+MIT License - see LICENSE file for details
