@@ -4,4 +4,5 @@
 - Custom Prism theme styles matching Tailwind dark mode.
 - Documentation for extending languages.
 
-
+### Fixed
+- Avoided circular `@apply` on .token.italic causing build failure.
