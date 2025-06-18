@@ -149,6 +149,14 @@ The project is optimized for Vercel deployment:
 2. Connect repository to Vercel
 3. Deploy automatically on push to main
 
+### CI Badge
+Add a Lighthouse status badge in your README using:
+
+```md
+![Lighthouse](https://github.com/<your-user>/<your-repo>/actions/workflows/lighthouse.yml/badge.svg)
+```
+Replace `<your-user>/<your-repo>` with your GitHub path.
+
 ## Next Steps
 
 This scaffolding provides the foundation for your pixel blog. Consider adding:
